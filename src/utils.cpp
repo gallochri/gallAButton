@@ -178,8 +178,10 @@ void APixelPowerOff(uint8_t pin){
 }
 
 //Get VCC
-float vcc(){
-    float vdd;
-    vdd = (float)ESP.getVcc() / (float)924;
-    return vdd;
+String vcc(){
+  float vdd;
+  char VCC[4];
+  vdd = (float)ESP.getVcc() / (float)920;
+  dtostrf(vdd,4,5,VCC);
+  return VCC;
 }

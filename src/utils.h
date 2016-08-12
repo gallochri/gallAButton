@@ -39,6 +39,6 @@ void powerOff();
 void APixelPowerOff(uint8_t pin);
 
 //get vcc
-float vcc();
+String vcc();
 
 #endif // UTILS_H

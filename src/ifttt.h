@@ -5,6 +5,7 @@
 #include <EEPROM.h>
 #include <ESP8266WiFi.h>
 #include <Adafruit_NeoPixel.h>
+#include <ArduinoJson.h>
 #include <ColorBlink.h>
 #include "setupmode.h"
 
