@@ -5,6 +5,7 @@
 #include "config.h"
 #include "utils.h"
 #include "setupmode.h"
+#include "data.h"
 
 void setup() {
     //Set WiFi to station mode
@@ -22,7 +23,7 @@ void setup() {
     //EEPROM debug!
     //ABconfigs.delParam(ALL);
     //ABconfigs.debugEEPROMrange();
-
+    setupSPIFFS();
     //Try to load saved config
     if (!loadWiFiSavedConfig()) {
         Serial.println("WARNING: WiFi configuration not found");
