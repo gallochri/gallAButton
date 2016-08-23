@@ -88,3 +88,5 @@ void handleSetWiFi() {
     s +="<br><a href='/'>Back</a></p>";
     WEB_SERVER.send(200, "text/html", makePage(DEVICE_TITLE,"Write Wi-Fi Settings", s));
 }
+
+

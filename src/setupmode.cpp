@@ -29,6 +29,7 @@ void setupMode() {
     blinkLed.violet(&led, 100, 2);
 
     // Settings Page
+
     WEB_SERVER.onNotFound(handleNotFound);
     WEB_SERVER.on("/wifi", handleWiFi);
     WEB_SERVER.on("/ifttt", handleIFTTT);
@@ -39,6 +40,15 @@ void setupMode() {
     WEB_SERVER.on("/setcustomurl", handleSetCustomURL);
 
     WEB_SERVER.on("/reboot", handleReboot);
+    WEB_SERVER.on("/testSPIFFS", testSPIFFS);
     WEB_SERVER.begin();
     startTime = millis();
+}
+
+void testSPIFFS(){
+    SPIFFS.begin();
+    Dir dir = SPIFFS.openDir("/");
+    File file = SPIFFS.open("/index.html","r");
+    WEB_SERVER.send(file, "text/html");
+    file.close();
 }
