@@ -24,9 +24,7 @@ extern ESP8266WebServer WEB_SERVER;
 extern Adafruit_NeoPixel led;
 extern ColorBlink blinkLed;
 
-
-
 void setupMode();
-void testSPIFFS();
+
 
 #endif // SETUPMODE_H

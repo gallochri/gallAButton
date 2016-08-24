@@ -7,6 +7,7 @@
 #include <Adafruit_NeoPixel.h>
 #include <ColorBlink.h>
 #include <EEPROMconfig.h>
+#include <FS.h>
 
 extern EEPROMconfig ABconfigs;
 extern Adafruit_NeoPixel led;
@@ -29,6 +30,10 @@ String makePage(String device_title, String page_title, String contents);
 
 // Decode URL
 String urlDecode(String input);
+
+// Debug SPIFFS
+void setupSPIFFS();
+String formatBytes(size_t bytes);
 
 //Put the board in deepsleep mode
 void powerOff();

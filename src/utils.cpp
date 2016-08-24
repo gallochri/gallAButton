@@ -110,6 +110,32 @@ String urlDecode(String input) {
     return s;
 }
 
+//format bytes
+String formatBytes(size_t bytes){
+    if (bytes < 1024){
+        return String(bytes)+"B";
+    } else if(bytes < (1024 * 1024)){
+        return String(bytes/1024.0)+"KB";
+    } else if(bytes < (1024 * 1024 * 1024)){
+        return String(bytes/1024.0/1024.0)+"MB";
+    } else {
+        return String(bytes/1024.0/1024.0/1024.0)+"GB";
+    }
+}
+
+void setupSPIFFS(){
+    SPIFFS.begin();
+    {
+        Dir dir = SPIFFS.openDir("/");
+        while (dir.next()) {
+            String fileName = dir.fileName();
+            size_t fileSize = dir.fileSize();
+            Serial.printf("FS File: %s, size: %s\n", fileName.c_str(), formatBytes(fileSize).c_str());
+        }
+        Serial.printf("\n");
+    }
+}
+
 //Put the board in deepsleep mode
 void powerOff() {
     Serial.println("Power OFF");
@@ -130,3 +156,4 @@ float vcc() {
     vdd = (float) ESP.getVcc() / (float) 920;
     return vdd;
 }
+

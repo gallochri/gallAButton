@@ -10,6 +10,9 @@
 
 extern String DEVICE_TITLE;
 
+String getContentType(String filename);
+bool handleFileRead(String path);
+
 //Web Server root
 void handleNotFound();
 
@@ -19,5 +22,8 @@ void handleReboot();
 void handleWiFi();
 
 void handleSetWiFi();
+
+// Test SPIFFS file
+void testSPIFFS();
 
 #endif // WEBSERVER_H

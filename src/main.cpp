@@ -5,7 +5,6 @@
 #include "config.h"
 #include "utils.h"
 #include "setupmode.h"
-#include "data.h"
 
 void setup() {
     //Set WiFi to station mode
@@ -13,17 +12,21 @@ void setup() {
     //Set GPIO4 to HIGH for retain on APixel board useless on others boards
     pinMode(RETPIN, OUTPUT);
     digitalWrite(RETPIN, HIGH);
-    //Init Serial port and EEPROM
+    //Init Serial port, EEPROM
     Serial.begin(115200);
     EEPROM.begin(512);
+
     //Init RGB LED
     led.begin();
     led.show();
     blinkLed.green(&led, 100, 2);
+
     //EEPROM debug!
     //ABconfigs.delParam(ALL);
     //ABconfigs.debugEEPROMrange();
+    //SPIFFS debug!
     setupSPIFFS();
+
     //Try to load saved config
     if (!loadWiFiSavedConfig()) {
         Serial.println("WARNING: WiFi configuration not found");
