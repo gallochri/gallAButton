@@ -10,19 +10,24 @@
 </head>
 <body>
 <header>
-    <img src="logo_color.png" width="166" height="50" title="AIRBUTTON" alt="Airbutton Logo" align="middle">
+    <img src="logo_color_small.png" width="166" height="50" title="AIRBUTTON" alt="Airbutton Logo" align="middle">
 </header>
 <div class="content-body">
     <h2>Configuration Mode</h2>
-    <p><a href="/wifi.html">WiFi</a></p>
+    <p><a href="wifi.html">WiFi</a></p>
     <form method="get" action="reboot.html">
         <fieldset>
             <legend>Select services that you want to enable.</legend>
             <br>
-            <p><input type="checkbox" name="ifttt" value="true" checked/>&nbsp;&nbsp;&nbsp;
-                <a href='/ifttt.html'>IFTTT</a></p>
-            <p><input type="checkbox" name="custom" value="true" checked/>&nbsp;&nbsp;&nbsp;
-                <a href="/customurl.html">Custom URL</a></p><br>
+            <p><label>
+                <input type="checkbox" name="ifttt" value="true" checked/>&nbsp;&nbsp;&nbsp;
+                <a href="ifttt.html">IFTTT</a>
+            </label></p>
+            <p><label>
+                <input type="checkbox" name="custom" value="true" checked/>&nbsp;&nbsp;&nbsp;
+                <a href="customurl.html">Custom URL</a>
+            </label></p>
+            <br>
             <p><input type="submit" value="Submit & Reboot" /></p>
         </fieldset>
     </form>
