@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=0">
+    <link rel="stylesheet" href="simple.css">
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="custom.css">
+    <title>AIRBUTTON | Configuration Mode</title>
+</head>
+<body>
+<header>
+    <img src="logo_color_small.png" width="166" height="50" title="AIRBUTTON" alt="Airbutton Logo" align="middle">
+</header>
+<div class="content-body">
+    <h2>Configuration Mode</h2>
+    <p><a href="wifi.html">WiFi</a></p>
+    <form method="get" action="reboot.html">
+        <fieldset>
+            <legend>Select services that you want to enable.</legend>
+            <br>
+            <p><label>
+                <input type="checkbox" name="ifttt" value="true" checked/>&nbsp;&nbsp;&nbsp;
+                <a href="ifttt.html">IFTTT</a>
+            </label></p>
+            <p><label>
+                <input type="checkbox" name="custom" value="true" checked/>&nbsp;&nbsp;&nbsp;
+                <a href="customurl.html">Custom URL</a>
+            </label></p>
+            <br>
+            <p><input type="submit" value="Submit & Reboot" /></p>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>

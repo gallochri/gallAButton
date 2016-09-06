@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=0">
+    <link rel="stylesheet" href="simple.css">
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="custom.css">
+    <title>AIRBUTTON | WiFi Settings</title>
+</head>
+<body>
+<header>
+    <img src="logo_color_small.png" width="166" height="50" title="AIRBUTTON" alt="Airbutton Logo" align="middle">
+</header>
+<div class="content-body">
+    <h2>Wi-Fi Settings</h2>
+    <p>Please select an SSID from the list or add your own.</p>
+    <p>Enter the password and submit.</p>
+    <form method='get' action='setwifi.html'>
+        <label>SSID: <select name='ssid'>
+            <option value="gallochri">gallochri</option>
+            <option value="gointernet-G577">gointernet-G577</option>
+        </select></label>
+        <br>
+        <label>or <input name='dssid' maxlength='32' placeholder='SSID'/></label>
+        <br>
+        <br>
+        <label>Password:<input name='pass' maxlength='64' type='password' placeholder='password'></label>
+        <br><br><input type='submit' value='Submit'>
+    </form>
+</div>
+</body>
+</html>
