@@ -2,7 +2,6 @@
 CMakeListsPrivate.txt
 .clang_complete
 .gcc-flags.json
-CMakeLists.txt
 .cproject
 .directory
 gallAButton.pro
