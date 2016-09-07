@@ -27,23 +27,23 @@ void handleNotFound() {
 }
 
 void handleReboot() {
+    String reboot = urlDecode(WEB_SERVER.arg("reboot"));
+    boolean rebootnow = reboot.equals("Reboot Now!");
+    if (rebootnow){
+        Serial.println("Rebooting...");
+        ESP.restart();
+    }
     String s = "<h2>Summary</h2>\n";
     s += "<p>Services enabled: <p>\n";
     String ifttt = urlDecode(WEB_SERVER.arg("ifttt"));
     String custom = urlDecode(WEB_SERVER.arg("custom"));
     String mqtt = urlDecode(WEB_SERVER.arg("mqtt"));
-    String reboot = urlDecode(WEB_SERVER.arg("reboot"));
     boolean ifttt_status = ifttt.equals("1");
     saveJsonConfig("ifttt", "enabled", ifttt_status);
     boolean custom_status = custom.equals("1");
     saveJsonConfig("custom", "enabled", custom_status);
     boolean mqtt_status = mqtt.equals("1");
     saveJsonConfig("mqtt", "enabled", mqtt_status);
-    boolean rebootnow = reboot.equals("Reboot Now!");
-    if (rebootnow){
-        Serial.println("Rebooting...");
-        ESP.restart();
-    }
     if (ifttt_status) {
         s += "<p><b>IFTTT</b></p>\n";
     }
