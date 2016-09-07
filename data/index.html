@@ -3,16 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,user-scalable=0">
-    <link rel="stylesheet" href="simple.css">
-    <link rel="stylesheet" href="basic.css">
-    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="css/simple.css">
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"> </script>
+    <script>
+        $(function() {
+            $.getJSON('config/config.json', function(data) {
+            //    var items = [];
+                $.each(data, function(i, f) {
+                    var tblRow = "<tr>" +
+                            "<td>" + i + "</td>" +
+                            "<td>" + f.enabled + "</td>" +
+                            "</tr>"
+                    $(tblRow).appendTo("#userdata tbody");
+                });
+            });
+        });
+    </script>
     <title>AIRBUTTON | Configuration Mode</title>
 </head>
 <body>
 <header>
-    <img src="logo_color_small.png" width="166" height="50" title="AIRBUTTON" alt="Airbutton Logo" align="middle">
+    <img src="img/logo_color_small.png" width="166" height="50" title="AIRBUTTON" alt="Airbutton Logo" align="middle">
 </header>
 <div class="content-body">
+    <table id="userdata" border="2">
+        <thead>
+        <th>Service</th>
+        <th>Enabled</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
     <h2>Configuration Mode</h2>
     <p><a href="wifi.html">WiFi</a></p>
     <form method="get" action="reboot.html">
@@ -28,7 +52,7 @@
                 <a href="customurl.html">Custom URL</a>
             </label></p>
             <br>
-            <p><input type="submit" value="Submit & Reboot" /></p>
+            <p><input type="submit" value="Submit & Reboot"/></p>
         </fieldset>
     </form>
 </div>

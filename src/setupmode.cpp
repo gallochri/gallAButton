@@ -48,6 +48,9 @@ void setupMode() {
     WEB_SERVER.serveStatic("/css/custom.css",SPIFFS,"/css/custom.css");
     WEB_SERVER.serveStatic("/css/simple.css",SPIFFS,"/css/simple.css");
     WEB_SERVER.serveStatic("/img/logo_color_small.png",SPIFFS,"/img/logo_color_small.png");
+    WEB_SERVER.serveStatic("/js/jquery-3.1.0.min.js", SPIFFS, "/js/jquery-3.1.0.min.js");
+    WEB_SERVER.serveStatic("/config/config.json", SPIFFS, "/config/config.json");
+    WEB_SERVER.serveStatic("/index.html", SPIFFS, "/index.html");
     WEB_SERVER.onNotFound(handleNotFound);
     WEB_SERVER.begin();
     MDNS.addService("http", "tcp", 80);
