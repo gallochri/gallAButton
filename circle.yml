@@ -2,7 +2,7 @@ dependencies:
     pre:
         # Install the latest stable PlatformIO
         - sudo pip install -U platformio
-        - platformio platforms install espressif --with-package tool-mkspiffs
+        - platformio platforms install espressif8266 --with-package tool-mkspiffs
 
 test:
     override:
