@@ -7,8 +7,8 @@ CMakeListsPrivate.txt
 gallAButton.pro
 gallAButton.pro.user
 .idea/
-.kdev4/
 *.kdev4
 .project
 .settings/
 src/utils.h.gch
+.piolibdeps/
