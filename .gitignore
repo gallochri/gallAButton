@@ -12,3 +12,5 @@ gallAButton.pro.user
 .settings/
 src/utils.h.gch
 .piolibdeps/
+.piolibdeps
+cmake-build-debug/
